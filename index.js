@@ -9,12 +9,12 @@ const database = require("./src/config/db.config");
 const mainRouter = require("./src/routes/main.router");
 const {errorHandler} = require("./src/middlewares/error.middleware"); 
 
+const app = express();
 const port = envconfig.PORT;
 app.listen(port, () => {
   debug(`Server is running on port ${port}`);
 });
 
-const app = express();
 database.connect();
 
 app.use(express.json());
